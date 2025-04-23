@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-services',
+  templateUrl: './services.page.html',
+  styleUrls: ['./services.page.scss'],
+  standalone: true,
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+})
+export class ServicesPage implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
