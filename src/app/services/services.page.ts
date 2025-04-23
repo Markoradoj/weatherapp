@@ -1,23 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Component({
-  selector: 'app-services',
-  templateUrl: './services.page.html',
-  styleUrls: ['./services.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+@Injectable({
+  providedIn: 'root'
 })
-export class ServicesPage implements OnInit {
 
-  constructor() { }
+export class ServicesPage{
 
-  ngOnInit() {
-  }
+
+
+  constructor(private HttpClient: HttpClient) { }
+
+getWeatherData():Observable<any>{
+  return this.HttpClient.get("https://api.openweathermap.org/data/2.5/weather?q=Galway&appid=6a66416403ed8e5e6e762cb8c261f303");
+}
 
 }
